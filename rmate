@@ -102,8 +102,8 @@ function showusage {
     echo "usage: $(basename $0) [arguments] [--] file-path  edit specified file
    or: $(basename $0) [arguments] -          read text from stdin
 
--H, --host HOST  Connect to HOST. Use 'auto' to detect the host from
-                 SSH. Defaults to $host.
+-H, --host HOST  Connect to HOST. Use 'auto' to detect the host from 
+                 tools.0x5c0f.cc. Defaults to $host.
 -p, --port PORT  Port number to use for connection. Defaults to $port.
 -w, --[no-]wait  Wait for file to be closed by TextMate.
 -l, --line LINE  Place caret on line number after loading file.
@@ -238,8 +238,12 @@ while [[ "$1" != "" ]]; do
     shift
 done
 
-if [[ "$host" = "auto" && "$SSH_CONNECTION" != "" ]]; then
-    host=${SSH_CONNECTION%% *}
+# if [[ "$host" = "auto" && "$SSH_CONNECTION" != "" ]]; then
+#     host=${SSH_CONNECTION%% *}
+# fi
+
+if [[ "$host" = "auto" ]]; then
+    host=tools.0x5c0f.cc
 fi
 
 filepaths=("${filepaths[@]}" "$@")
