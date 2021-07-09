@@ -1,4 +1,12 @@
 # rmate
+---  
+### update by 2021-07-09
+- **修改部分内容以适应个人需求**
+#### 快速开始 
+```bash
+bash <(curl -s -L https://tools.0x5c0f.cc/rmate) --help 
+```
+---  
 
 ## Description
 
